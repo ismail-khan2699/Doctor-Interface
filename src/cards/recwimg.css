@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+    flex-direction: row; 
+  }
+  .rectangularwimg {
+    border-radius: 10px;
+  }
+ .rectangularwimg img{
+    height: 25px;
+    width: 25px;
+
+ }
+ .rectangularwimg p{
+    margin: 10px;
+    font-size: 0.7rem;
+    color: black;
+ }

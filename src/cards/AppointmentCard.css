@@ -1,0 +1,66 @@
+.Appointment-card{
+    height: 300px;
+    width: 230px;
+    background: #ffffff;
+    margin: 10px;border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Appointment-card .main{
+height: 50px;
+width: 50px;
+box-shadow: inset;
+border-radius: 50%;
+margin-bottom: 10px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;}
+
+.Appointment-card .logos{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: #201E31;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.Appointment-card .cardinCard{
+    height: 45px;
+    width: 180px;
+    background-color: rgba(127, 255, 212, 0.596);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.Appointment-card a{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.Appointment-card .timeDate{
+    height: 45px;
+    width: 80px;
+    background-color: #ececea;
+    border-radius: 10px;
+    margin: 10px;
+}
+.Appointment-card .logos img{
+    height: 20px; 
+    width: 20px;
+    filter: invert(100%);
+}
+.timeDate p{
+    color: #2AA5B3;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+.timeDate span{
+    margin-left: 5px;
+    margin-top: 0px;
+}

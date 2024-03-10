@@ -1,0 +1,59 @@
+.cardcollection{
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row; 
+  }
+p{
+    color: black;
+    font-size: 0.8rem;
+    margin: 1px;
+}
+.scrollbar{
+    scrollbar-width: thin; 
+    -ms-overflow-style: none;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 0.1rem; 
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Set the thumb color to match the background or make it transparent */
+  }
+a:hover{
+transform:scale(103%);
+overflow-wrap: normal;
+transition: transform  0.3s;
+filter:saturate(170%);
+}
+.button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 0.5px solid black;
+    margin: 10px;
+}
+.button img{
+    width: 25px;
+    height: 25px;
+}
+.bt{
+  color: black;
+  width: 70px;
+}
+.bt:hover{
+  text-decoration: underline;
+  color: black;
+}
+.button.bt2{
+  background-color: #201E31;
+}
+.button.bt2 img{
+  filter: invert(100%);
+}
