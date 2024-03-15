@@ -31,7 +31,7 @@ const handleCardClick = (index: number) => {
               <a key={data.id} href="#" onClick={() => handleCardClick(index)}>
           <div className={`card ${index === clickedIndex ? 'clicked' : ''} `}>
               <div className={`card-image ${index === clickedIndex ? 'clicked' : ''}`}>
-                <img src={`src/assets/${data.pic}`} width={30} height={30} alt="Profile Image"  
+                <img src={`/assets/${data.pic}`} width={30} height={30} alt="Profile Image"  
                 className={`imgs ${index === clickedIndex ? 'clicked' : ''}`}
                 />
               </div>

@@ -51,7 +51,7 @@ function Doctor() {
       <p style={{fontSize:'1.5rem', margin:'0px', fontWeight:'bold'}}>Find Doctor <br/><span style={{fontSize: '0.9rem',fontWeight:'normal', color:'GrayText'}}>Make an appointment, Find a doctor</span></p>
        <div className="flex-container" style={{alignItems:'center', marginRight:'20px',  marginLeft:'20px'}}>
           <a className='button' href='#'>
-          <img src="src/assets/search.svg" alt="search"/>
+          <img src="/assets/search.svg" alt="search"/>
           </a>
           <a href='#' className='bt' >See All</a>
       </div>
@@ -63,13 +63,13 @@ function Doctor() {
   <p style={{fontSize:'1.5rem', margin:'0px', fontWeight:'bold'}}>Your Appointments <br/><span style={{fontSize: '0.9rem',fontWeight:'normal', color:'GrayText'}}>Your appointments are listed here.</span></p>
   <div className="flex-container" style={{alignItems:'center', marginRight:'20px',  marginLeft:'20px'}}>
           <a className='button' href='#'>
-          <img src="src/assets/search.svg" alt="search"/>
+          <img src="/assets/search.svg" alt="search"/>
           </a>
           <a className='button' href='#'>
-          <img src="src/assets/calender2.svg" alt="schedule"/>
+          <img src="/assets/calender2.svg" alt="schedule"/>
           </a>
           <a className='button bt2' href='#'>
-            <img src="src/assets/plus1.svg" alt="Add"/>
+            <img src="/assets/plus1.svg" alt="Add"/>
           </a>
       </div>
 </div>

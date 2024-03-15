@@ -29,7 +29,7 @@ function NavBar() {
   return (
     <div className='ontop'>
       <a href='./'>
-        <img src='src/assets/logo.png' height={47} width={47} className='logoimg' alt='Logo' />
+        <img src='/assets/logo.png' height={47} width={47} className='logoimg' alt='Logo' />
       </a>
       <ul className="vertical-svg-list" >
         <div style={{ height: '5px' }}></div>
@@ -41,7 +41,7 @@ function NavBar() {
   >
     <a href='#'>
       <img
-        src={`src/assets/${svgFilename}`}
+        src={`/assets/${svgFilename}`}
         alt={svgFilename}
         height={27}
         width={27}
