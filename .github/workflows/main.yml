@@ -19,7 +19,7 @@ jobs:
       - name: Build the React app
         run: npm run build  # Or yarn build
       - name: Deploy to VPS using SSH 
-        uses: shivanandpandya/ssh-action@v2
+        uses: nlohmann/action-ssh@v2
         with:
           host: '8.222.212.29'
           username: 'root'
