@@ -23,7 +23,7 @@ jobs:
         with:
           host: '8.222.212.29'  # Consider using a separate secret for the host
           username: ${{ secrets.USERNAME }}  # Consider using a separate secret for the username
-          key: ${{ secrets.SSH_P_KEY }}  # Encrypted private key secret
+          password: ${{ secrets.PASSWORD }}  # Encrypted private key secret
           script: |
             cd /var/www/html  # Replace with the directory on your VPS
             rm -rf *  # Remove existing files (optional, be cautious)
