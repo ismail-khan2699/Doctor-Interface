@@ -27,6 +27,7 @@ jobs:
           script: |
             cd /var/www/html  # Replace with the directory on your VPS
             rm -rf *  # Remove existing files (optional, be cautious)
-            cp -r /dist/* .  # Copy the built app files
+            cp -r ./dist/* .
+            ls
             sudo systemctl restart httpd  # Restart Apache (adjust command if using a different web server)
 
