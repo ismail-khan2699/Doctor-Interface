@@ -26,8 +26,7 @@ jobs:
           key: ${{ secrets.SSH_P_KEY }}  # Reference the secret holding your private key
           script: |
             cd /var/www/html  # Replace with the directory on your VPS
-            rm -rf *  # Remove existing files (optional, be cautious)
-            cp -r $GITHUB_WORKSPACE/dist/* .
-    
+            rm -rf *  # Use with caution, consider a more specific pattern
+            cp -r $GITHUB_WORKSPACE/dist/* .  # Copy files from dist to VPS
+            # Optional: ls  # List files in the directory (for debugging)
             sudo systemctl restart httpd  # Restart Apache (adjust command if using a different web server)
-
