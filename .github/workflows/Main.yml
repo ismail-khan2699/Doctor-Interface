@@ -22,9 +22,9 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: 8.222.212.29  # Consider using a separate secret for the host
-          username: ${{ secrets.USERNAME }}  # Consider using a separate secret for the username
-          password: ${{ secrets.PASSWORD }}  # Encrypted private key secret
-          port: '22'
+          username: root  # Consider using a separate secret for the username
+          password: Kiritouzu0994  # Encrypted private key secret
+          port: 22
           script: |
             cd /var/www/html  # Replace with the directory on your VPS
             rm -rf *  # Remove existing files (optional, be cautious)
