@@ -1,1 +1,27 @@
+name: Deploy Main
 
+on:
+  push:
+    branches: [Main] # Trigger on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Run the workflow on a Linux virtual machine
+
+    steps:
+      - uses: actions/checkout@v3 # Checkout the repository code
+      - name: Use Node.js 14 # Adjust Node.js version as needed (if applicable)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Deploy to VPS using SSH (Secure with SSH Key)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: "8.222.212.29"
+          username: "root" # Consider using a non-privileged user for deployment
+          key: ${{ secrets.SSH_P_KEY }} # Reference the secret holding your private key
+          script: |
+            rm -rf * 
+            git clone https://github.com/ismail-khan2699/Doctor-Interface/
+            cp -r ~/Doctor-Interface/dist/* /var/www/html
+            sudo systemctl restart httpd
