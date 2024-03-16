@@ -1,4 +1,4 @@
-name: Deploy React App (Secure with SSH Keys)
+name: Deploy 
 
 on:
   push:
