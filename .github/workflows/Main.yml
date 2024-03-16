@@ -21,9 +21,8 @@ jobs:
           username: 'root'  # Consider using a non-privileged user for deployment
           key: ${{ secrets.SSH_P_KEY }}  # Reference the secret holding your private key
           script: |
-            cd /temp
             rm -rf * 
             git clone https://github.com/ismail-khan2699/Doctor-Interface/
-            mv /temp/Doc-Interface/dist/* /var/www/html/
+            cp -r ~/Doctor-Interface/dist/* /var/www/html
             sudo systemctl restart httpd  
 
