@@ -27,12 +27,4 @@ jobs:
           remote_host: '8.222.212.29'  # Replace with your VPS host address
           remote_user: 'root'  # Replace with your username on VPS
           remote_key: ${{ secrets.SSH_P_KEY }}  # Encrypted private key secret
-      - name: Connect to VPS and Restart httpd (Optional)
-        uses: nlohmann/action-ssh@v2  # Or your preferred SSH action
-        if: always()  # Run this step even if previous steps fail
-        with:
-          host: ${{ secrets.VPS_HOST }}  # Consider using a separate secret for the host
-          username: ${{ secrets.VPS_USERNAME }}  # Consider using a separate secret for the username
-          key: ${{ secrets.SSH_P_KEY }}  # Encrypted private key secret
-          script: |
-            sudo systemctl restart httpd  # Adjust command for your web server (e.g., nginx)
+     
