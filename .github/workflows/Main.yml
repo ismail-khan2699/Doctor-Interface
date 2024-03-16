@@ -21,7 +21,7 @@ jobs:
       - name: Deploy to VPS using SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}  # Consider using a separate secret for the host
+          host: 8.222.212.29  # Consider using a separate secret for the host
           username: ${{ secrets.USERNAME }}  # Consider using a separate secret for the username
           password: ${{ secrets.PASSWORD }}  # Encrypted private key secret
           port: '22'
