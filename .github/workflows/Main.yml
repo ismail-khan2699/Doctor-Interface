@@ -1,4 +1,4 @@
-name: Deploy React App
+name: Deploy React App (Secure with SSH Keys)
 
 on:
   push:
@@ -10,23 +10,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3  # Checkout the repository code
-      - name: Use Node.js 16  # Adjust Node.js version as needed (if applicable)
+      - name: Use Node.js 14  # Adjust Node.js version as needed (if applicable)
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 14
       - name: Install dependencies
         run: npm install  # Or yarn install, depending on your preference
       - name: Build the React app
         run: npm run build  # Or yarn build
-      - name: Deploy to VPS using SSH
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Deploy to VPS using SSH (Secure with SSH Key)
+        uses: gr2m/github-actions-ssh@v2
         with:
-          host: 8.222.212.29  # Consider using a separate secret for the host
-          username: root  # Consider using a separate secret for the username
-          password: Kiritouzu0994  # Encrypted private key secret
-          port: 22
+          host: '8.222.212.29'
+          username: 'root'  # Consider using a non-privileged user for deployment
+          key: ${{ secrets.SSH_P_KEY }}  # Reference the secret holding your private key
           script: |
             cd /var/www/html  # Replace with the directory on your VPS
             rm -rf *  # Remove existing files (optional, be cautious)
             cp -r ../dist/* .  # Copy the built app files
             sudo systemctl restart httpd  # Restart Apache (adjust command if using a different web server)
+
