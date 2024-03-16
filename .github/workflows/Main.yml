@@ -27,7 +27,7 @@ jobs:
           script: |
             cd /var/www/html  # Replace with the directory on your VPS
             rm -rf *  # Remove existing files (optional, be cautious)
-            cp -r ./dist/* .
-            ls
+            cp -r $GITHUB_WORKSPACE/dist/* .
+    
             sudo systemctl restart httpd  # Restart Apache (adjust command if using a different web server)
 
