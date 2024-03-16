@@ -1,0 +1,32 @@
+name: Deploy React App
+
+on:
+  push:
+    branches: [ Main ]  # Trigger on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Run the workflow on a Linux virtual machine
+
+    steps:
+      - uses: actions/checkout@v3  # Checkout the repository code
+      - name: Use Node.js 14  # Adjust Node.js version as needed
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm install  # Or yarn install, depending on your preference
+      - name: Build the React app
+        run: npm run build  # Or yarn build
+      - name: Deploy to VPS using SSH 
+        uses: shivanandpandya/ssh-action@v2
+        with:
+          host: '{{ secrets.VPS_HOST }}'
+          username: '{{ secrets.VPS_USERNAME }}'
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22  # Default SSH port
+          script: |
+            cd /var/www/html  # Replace with the directory on your VPS
+            rm -rf *  # Remove existing files (optional, be cautious)
+            cp -r ../dist/* .  # Copy the built app files
+            sudo systemctl restart httpd  # Restart Apache (adjust command if using a different web server)
