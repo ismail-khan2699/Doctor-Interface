@@ -19,7 +19,7 @@ jobs:
       - name: Build the React app
         run: npm run build  # Or yarn build
       - name: Deploy to VPS using SSH (Secure with SSH Key)
-        uses: gr2m/github-actions-ssh@v2
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: '8.222.212.29'
           username: 'root'  # Consider using a non-privileged user for deployment
