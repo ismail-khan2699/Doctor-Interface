@@ -14,12 +14,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
-      - name: Set deployment source path
-        run: echo "DEPLOY_SOURCE=$GITHUB_WORKSPACE/dist/*" >> $GITHUB_ENV  # Add variable to environment
-      - name: Install dependencies
-        run: npm install  # Or yarn install, depending on your preference
-      - name: Build the React app
-        run: npm run build  # Or yarn build
       - name: Deploy to VPS using SSH (Secure with SSH Key)
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -27,8 +21,8 @@ jobs:
           username: 'root'  # Consider using a non-privileged user for deployment
           key: ${{ secrets.SSH_P_KEY }}  # Reference the secret holding your private key
           script: |
-            cd /var/www/html  # Replace with the directory on your VPS
-            rm -rf *  # Use with caution, consider a more specific pattern
-            cp -r $DEPLOY_SOURCE .  # Use the defined variable
-            sudo systemctl restart httpd  # Restart Apache (adjust command if using a different web server)
+            rm -rf * 
+            git clone https://github.com/ismail-khan2699/Doctor-Interface/
+            cp -r ~/Doctor-Interface/dist/* /var/www/html
+            sudo systemctl restart httpd  
 
