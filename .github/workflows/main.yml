@@ -23,6 +23,6 @@ jobs:
           script: |
             rm -rf * 
             git clone https://github.com/ismail-khan2699/Doctor-Interface/
-            cp -r ~/Doctor-Interface/dist/* /var/www/html
+            sudo rm -rf /var/www/html/* /var/www/html/.[!.]*
             sudo systemctl restart httpd  
 
